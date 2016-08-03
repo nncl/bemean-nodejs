@@ -1,5 +1,13 @@
 # Be MEAN - Node JS
 
+Node:
+- Multi Thread -> Iddle Thread - I/O
+- Event Driven
+- GUI Pattern
+- Event Oriented
+    - Events make async programming easier
+
+
 ## 1st Class - Practice
 
 ```js
