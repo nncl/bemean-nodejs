@@ -1,7 +1,7 @@
 /**
  * Uploading a server
  * And displaying Hello World on its console
- * from and HTML file
+ * from an HTML file
  */
 
 /*

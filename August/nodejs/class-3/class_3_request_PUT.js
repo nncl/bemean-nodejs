@@ -1,14 +1,33 @@
 /**
- * Request to an API with REQUEST method
+ * Request to an API with PUT method
+ *
+ * @param Id Param that goes into path
  */
 
 'use strict';
 
 const http = require('http');
+const querystring = require('querystring');
+
+/*
+ * Parse the data into query string
+ *
+ * I.e.: name=Caue%20Almeida&type=student
+ */
+
+const postData = querystring.stringify({
+    name: 'Caue'
+    , type: 'student'
+});
 
 const options = {
-    host: 'api.redtube.com'
-    , path: '/?data=redtube.Videos.searchVideos&search=Sasha%20Gray'
+    host: 'webschool-io.herokuapp.com'
+    , method: 'PUT'
+    , path: '/api/pokemons/57abc467269b4d1100d19461'
+    , headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+        , 'Content-Length': postData.length
+    }
 };
 
 function callback(res) {
@@ -45,7 +64,11 @@ req.on('error', (e)=> {
 });
 
 /*
-* Finish him
-*/
+ * Writing data in the request
+ *
+ * Sending the POST HERE
+ */
+
+req.write(postData);
 
 req.end();

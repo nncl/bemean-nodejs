@@ -1,14 +1,35 @@
 /**
  * Request to an API with REQUEST method
+ *
  */
 
 'use strict';
 
 const http = require('http');
+const querystring = require('querystring');
+
+/*
+ * Parse the data into query string
+ *
+ * I.e.: name=Caue%20Almeida&type=student
+ */
+
+const postData = querystring.stringify({
+    name: 'Caue Almeida'
+    , type: 'student'
+});
+
+console.log('postData', postData);
+console.log('length', postData.length);
 
 const options = {
-    host: 'api.redtube.com'
-    , path: '/?data=redtube.Videos.searchVideos&search=Sasha%20Gray'
+    host: 'webschool-io.herokuapp.com'
+    , method: 'POST'
+    , path: '/api/pokemons'
+    , headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+        , 'Content-Length': postData.length
+    }
 };
 
 function callback(res) {
@@ -45,7 +66,11 @@ req.on('error', (e)=> {
 });
 
 /*
-* Finish him
-*/
+ * Writing data in the request
+ *
+ * Sending the POST HERE
+ */
+
+req.write(postData);
 
 req.end();
