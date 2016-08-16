@@ -54,3 +54,15 @@ Caues-MacBook-Pro:npm cauealmeida$ npm start
 
 Ran!!
 ```
+
+## Part II
+
+Global and Process.
+
+### Global
+
+Global variables:
+
+- no global scopes
+
+### Process
