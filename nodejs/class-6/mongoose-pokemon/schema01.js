@@ -1,15 +1,10 @@
 
 /**
- * Working w/ Mongoose
+ * Connecting to MongoDB with Mongoose
  */
 
-'use strict';
-
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/be-mean-instagram');
-
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 // Schema Creation
 const pokemonSchema = new Schema({
@@ -20,3 +15,6 @@ const pokemonSchema = new Schema({
     defense : Number,
     height : Number
 });
+
+// ????????????
+module.exports = pokemonSchema;
