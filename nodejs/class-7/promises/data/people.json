@@ -1,0 +1,26 @@
+[
+  {
+    "name": "caue",
+    "age" : 21
+  },
+  {
+    "name": "data",
+    "age" : 20
+  },
+  {
+    "name": "caique",
+    "age" : 23
+  },
+  {
+    "name": "sérgio",
+    "age" : 51
+  },
+  {
+    "name": "lucia",
+    "age" : 50
+  },
+  {
+    "name": "mayla",
+    "age" : 1.5
+  }
+]
