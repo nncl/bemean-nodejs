@@ -8,3 +8,8 @@ Separate, in order:
 
 - DB's connection
 - Schemas
+
+## Part II
+
+Validating:
+- returns `boolean`
