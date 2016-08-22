@@ -39,5 +39,3 @@ BlogPost.save((err, data) => {
 
     return console.log('Data: ', data);
 });
-
-// 30.49
