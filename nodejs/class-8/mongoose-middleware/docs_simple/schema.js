@@ -7,7 +7,7 @@ const _schema = {
     , attack: Number
     , defense: Number
     , height: Number
-    , type: Number
+    , type: String
 };
 
 const PokemonSchema = new Schema(_schema);
