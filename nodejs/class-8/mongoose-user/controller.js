@@ -12,19 +12,11 @@ const _userData = {
 };
 
 const CRUD = {
-    create: (req, res) => {
-        UserModel.create(req, res);
-    }
-    , retrieve: (req, res) => {
-        UserModel.retrieve(req, res);
-        // UserModel.get(query);
-    }
-    , update: (req, res) => {
-        UserModel.update(req, res);
-    }
-    , delete: (req, res) => {
-        UserModel.delete(req, res);
-    }
+    create: UserModel.create
+    , find: UserModel.find
+    , findOne: UserModel.findOne
+    , update: UserModel.update
+    , remove: UserModel.remove
 };
 
 module.exports = CRUD;

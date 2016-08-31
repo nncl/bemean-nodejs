@@ -7,7 +7,7 @@ const url = require('url');
 const Controller = require('./controller');
 
 var server = http.createServer(function (req, res) {
-    var msg = "";
+    // var msg = "";
     var url_parts = url.parse(req.url);
 
     switch (url_parts.pathname) {
@@ -15,15 +15,19 @@ var server = http.createServer(function (req, res) {
             Controller.create(req, res);
             break;
         case '/api/users/retrieve' :
-            Controller.retrieve(req, res);
+            Controller.find(req, res);
+            // msg = "User retrieved successfully";
+            break;
+        case '/api/users/get' :
+            Controller.findOne(req, res);
             // msg = "User retrieved successfully";
             break;
         case '/api/users/update' :
-            Controller.update();
+            Controller.update(req, res);
             // msg = "User updated successfully";
             break;
         case '/api/users/delete' :
-            Controller.delete();
+            Controller.remove(req, res);
             // msg = "User deleted successfully";
             break;
         default :
