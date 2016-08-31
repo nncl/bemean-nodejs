@@ -35,6 +35,6 @@ var server = http.createServer(function (req, res) {
     // res.end(msg);
 });
 
-server.listen(3000, () => {
-    console.log('Server running in localhost:3000');
+server.listen(8080, () => {
+    console.log('Server running in localhost:8080');
 });

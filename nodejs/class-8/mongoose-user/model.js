@@ -32,11 +32,12 @@ const CRUD = {
             });
         });
     }
-    , retrieve: (query) => {
-        User.find(query, (err, user) => {
+    , retrieve: (req, res) => {
+        User.find({}, (err, users) => {
             if (err) return console.log('Error', err);
 
-            return console.log('Found', user);
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            return res.end(JSON.stringify({users: users}));
         });
     }
     , get: (query) => {
