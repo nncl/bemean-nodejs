@@ -19,25 +19,4 @@ const _schema = {
 
 const userSchema = new Schema(_schema);
 
-const _userData = {
-    name: 'Dayara Tropiani'
-    , password : '098765432'
-    , email : 'dtropiani@outlook.com'
-    , type : ['f']
-};
-
-const User = mongoose.model('User', userSchema);
-
-User.create(_userData, (err, user) => {
-    if (err) return console.log('Error', err);
-
-    return console.log('Success', user);
-});
-
-// User.findOne({}, (err, user) => {
-//     if (err) return console.log('Error', err);
-//
-//     return console.log('Name', user.name);
-// });
-
 module.exports = userSchema;

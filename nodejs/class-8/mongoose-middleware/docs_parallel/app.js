@@ -19,17 +19,17 @@ function pokemonHandler() {
         , description: {type: String, trim: true}
     });
 
-    schema.pre('save', true, (next, done)=> {
+    schema.pre('save', true, function (next, done) {
         util.log('before save');
         log('model', '${this.name} ${this.id} has been saved.', done);
         next();
     });
 
-    schema.post('save', true, (doc)=> {
+    schema.post('save', true, function (doc) {
         util.log('%s has been saved', doc.name);
     });
 
-    schema.post('remove', true, (doc)=> {
+    schema.post('remove', true, function (doc) {
         util.log('%s has been removed', doc.name);
         log('model', '${doc.name} ${doc.id} has been removed.');
     });
