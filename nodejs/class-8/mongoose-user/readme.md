@@ -6,3 +6,7 @@ Getting All Together :)
 
 - add `fields` directory
 - define each field its personalized stuff
+
+## Exercises
+
+`./exercises.md` :)

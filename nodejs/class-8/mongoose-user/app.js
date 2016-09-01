@@ -4,7 +4,7 @@
 
 const http = require('http');
 const url = require('url');
-const Controller = require('./controller');
+const Controller = require('../controller');
 
 var server = http.createServer(function (req, res) {
     // var msg = "";
