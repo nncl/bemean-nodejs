@@ -5,6 +5,3 @@
 ## Indivisible Parts...
 
 ... are called Quarks. In our app's architecture, quarks are our **FIELDS**.
-
-
-
