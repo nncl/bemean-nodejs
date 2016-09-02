@@ -5,12 +5,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/pokemons');
 
 const Schema = mongoose.Schema;
 
 const _schema = {
-    name: {type : String}
+    name: {type : String, required : true}
     , type : {type : String}
 };
 

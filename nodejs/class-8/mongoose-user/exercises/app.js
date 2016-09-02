@@ -2,6 +2,9 @@
  * Main stuff
  */
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/pokemons');
+
 const http = require('http');
 const url = require('url');
 const PokemonController = require('./controllers/Pokemon');
