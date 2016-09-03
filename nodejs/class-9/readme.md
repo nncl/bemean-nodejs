@@ -7,3 +7,20 @@
 Test must be green as faster as you can.
 
 We should make the test valid and after that we must **refactor** it.
+
+## Chapter 2
+
+Mocha has more funcs, such as:
+- before
+- after
+- beforeEach
+- afterEach
+
+So, before executes before all tests, while beforeEach executes before **each** test.
+
+## Considerations
+
+To study:
+
+**CODE DOJO**
+**CODE KATA**

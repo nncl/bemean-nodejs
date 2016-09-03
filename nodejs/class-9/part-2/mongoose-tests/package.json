@@ -1,0 +1,17 @@
+{
+  "name": "validate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "schema-validate-age.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nncl",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
