@@ -4,4 +4,14 @@
 
 ## Indivisible Parts...
 
-... are called Quarks. In our app's architecture, quarks are our **FIELDS**.
+... are called Quarks. In our app's architecture, quarks are properties of our **FIELDS**, and these last are called **ATOMS**.
+
+## Molecule
+
+Set of 2 or more atoms.
+
+For us, it's **SCHEMA** porra.
+
+## Organism
+
+Set of molecules, so, for us, **MODEL DUDE**.
