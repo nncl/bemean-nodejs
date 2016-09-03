@@ -1,0 +1,14 @@
+{
+  "name": "mongoose-atomic-design",
+  "version": "1.0.0",
+  "description": "[Be MEAN: Node.JS (AULA 8 pt.6/6) Mongoose Atomic Design](https://www.youtube.com/watch?v=3Hq7O7TeXjw&list=PL77JVjKTJT2hP_lxL88oDo2rJvOskpGfJ&index=17)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nncl",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.5.9"
+  }
+}
