@@ -1,0 +1,14 @@
+{
+  "name": "chai-study",
+  "version": "1.0.0",
+  "description": "[DOC](http://chaijs.com/)",
+  "main": "doc-ex-tdd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nncl",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
+}
