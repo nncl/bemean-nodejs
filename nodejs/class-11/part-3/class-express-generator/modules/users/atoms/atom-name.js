@@ -1,0 +1,13 @@
+/**
+ * Atom field name
+ */
+
+const Atom = {
+    type: String
+    , set: require('../quarks/quark-toLower')
+    , validate: require('../quarks/quark-validate-string-lengthGTE3')
+    , required: true
+    , index: true
+};
+
+module.exports = Atom;
