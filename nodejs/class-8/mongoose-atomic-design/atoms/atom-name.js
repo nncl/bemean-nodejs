@@ -11,6 +11,4 @@ const Atom = {
     , index: true
 };
 
-console.log(Atom);
-
 module.exports = Atom;
