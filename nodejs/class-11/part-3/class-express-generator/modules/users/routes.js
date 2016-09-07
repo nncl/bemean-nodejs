@@ -35,7 +35,16 @@ router.get('/:id', function (req, res) {
     const query = {_id: req.params.id};
 
     Organism.findOne(query, (err, data)=> {
-        callback(err, data, res);
+
+        var user = {
+            fullname: data.name.full
+            , name : data.name
+            , email : data.email
+            , created_at : data.created_at
+            , updated_at : data.updated_at
+        };
+
+        callback(err, user, res);
     });
 
 });
@@ -67,7 +76,8 @@ router.put('/:id', function (req, res) {
 
     Organism.findOne(query, (err, user)=> {
 
-        user.name = req.body.name;
+        user.name.first = req.body.name.first;
+        user.name.last = req.body.name.last;
         user.email = req.body.email;
         user.updated_at = Date.now();
 
