@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('./routes/index');
 const users = require('./routes/users');
-const UsersAPI = require('./modules/users/routes');
+const UsersAPI = require('./modules/Users');
 
 const app = express();
 
