@@ -1,6 +1,7 @@
 'use strict';
 
 const Organism = require('./organisms/organism-user');
+const paginate = require('express-paginate');
 
 const callback = (err, data, res)=> {
     if (err) return res.json(err);
@@ -13,8 +14,12 @@ const Actions = {};
 Actions.list = (req, res) => {
     const query = {};
 
-    Organism.find(query, (err, data)=> {
-        callback(err, data, res);
+    Organism.paginate(query, {page: req.query.page, limit: req.query.limit}, (err, data, pageCount, itemCount)=> {
+        var obj = {
+            has_next_page: data.page < data.pages ? true : false
+            , data: data
+        };
+        callback(err, obj, res);
     });
 };
 

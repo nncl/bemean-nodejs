@@ -2,18 +2,20 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
 
 const Molecule = {
     name: {
         first: require('../atoms/atom-name')
         , last: require('../atoms/atom-name')
     }
-    , email: {type: String, unique: true, required: true}
-    , created_at: {type: Date, default: Date.now}
-    , updated_at: {type: Date, default: Date.now}
+    , email: require('../atoms/atom-email')
+    , created_at: require('../atoms/atom-date')
+    , updated_at: require('../atoms/atom-date')
 };
 
 const MoleculeSchema = new Schema(Molecule);
+MoleculeSchema.plugin(paginate);
 
 // Virtual name
 MoleculeSchema

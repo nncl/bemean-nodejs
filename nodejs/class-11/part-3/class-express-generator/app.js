@@ -8,12 +8,15 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const paginate = require('express-paginate');
 
 const routes = require('./routes/index');
 const users = require('./routes/users');
 const UsersAPI = require('./modules/Users');
 
 const app = express();
+
+app.use(paginate.middleware(10, 50));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
