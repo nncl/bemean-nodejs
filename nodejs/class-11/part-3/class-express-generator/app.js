@@ -13,6 +13,7 @@ const paginate = require('express-paginate');
 const routes = require('./routes/index');
 const users = require('./routes/users');
 const UsersAPI = require('./modules/Users');
+const ClassAPI = require('./modules/Class');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/users', users);
 
 // JSON API
 app.use('/api/v1/users', UsersAPI);
+app.use('/api/v1/class', ClassAPI);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
