@@ -12,6 +12,7 @@ const Molecule = {
     , email: require('../atoms/atom-email')
     , created_at: require('../atoms/atom-date')
     , updated_at: require('../atoms/atom-date')
+    , image: {type : String, default : null}
 };
 
 const MoleculeSchema = new Schema(Molecule);
