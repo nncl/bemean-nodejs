@@ -1,7 +1,6 @@
 'use strict';
 
 const Organism = require('./organisms/organism-user');
-const paginate = require('express-paginate');
 const multer = require('multer');
 
 const callback = (err, data, res)=> {
@@ -49,6 +48,22 @@ Actions.listById = (req, res) => {
 
 Actions.create = (req, res) => {
 
+    /*
+     * Validation
+     */
+
+    req.checkBody('name', 'Invalid name').notEmpty();
+    req.checkBody('email', 'Invalid email').notEmpty().isEmail();
+
+    let errors = req.validationErrors();
+    if (errors) {
+        res.status(400).json({
+            success: false
+            , message: errors
+        });
+        return;
+    }
+
     // upload configuration
     let file_name = null;
     const storage = multer.diskStorage({ //multers disk storage settings
@@ -73,14 +88,14 @@ Actions.create = (req, res) => {
         const body = req.body;
 
         const name = {
-            "first" : body.name.first
-            , "last" : body.name.last
+            "first": body.name.first
+            , "last": body.name.last
         };
 
         const _schema = {
-            "name" : name
-            , "email" : body.email
-            , "image" : __dirname + '/uploads/' + file_name
+            "name": name
+            , "email": body.email
+            , "image": __dirname + '/uploads/' + file_name
         };
 
         const user = new Organism(_schema);
