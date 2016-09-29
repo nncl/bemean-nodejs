@@ -28,6 +28,11 @@ module.exports = (Actions) => {
             , path: '/:id'
             , action: Actions.delete
         }
+        , {
+            method: 'post'
+            , path: '/forgot'
+            , action: Actions.recover
+        }
     ];
 
     return Routes;
