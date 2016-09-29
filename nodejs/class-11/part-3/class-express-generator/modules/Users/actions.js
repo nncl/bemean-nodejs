@@ -19,7 +19,7 @@ Actions.list = (req, res) => {
 
     Organism.paginate(query, {page: req.query.page, limit: req.query.limit}, (err, data, pageCount, itemCount)=> {
         var obj = {
-            has_next_page: data.page < data.pages ? true : false
+            has_next_page: data.page < data.pages
             , data: data
         };
         callback(err, obj, res);
@@ -116,9 +116,19 @@ Actions.update = (req, res) => {
 
     Organism.findOne(query, (err, user)=> {
 
+        if (!user) {
+            let error = {
+                success : false,
+                message : 'User not found'
+            };
+
+            return callback(error, null, res);
+        }
+
         user.name.first = req.body.name.first;
         user.name.last = req.body.name.last;
         user.email = req.body.email;
+        user.password = req.body.password;
         user.updated_at = Date.now();
 
         user.save((err, data)=> {
