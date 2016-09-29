@@ -118,8 +118,8 @@ Actions.update = (req, res) => {
 
         if (!user) {
             let error = {
-                success : false,
-                message : 'User not found'
+                success: false,
+                message: 'User not found'
             };
 
             return callback(error, null, res);
@@ -192,27 +192,24 @@ Actions.recover = (req, res) => {
         },
         (token, user, done) => {
             let smtpTransport = nodemailer.createTransport('SMTP', {
-                service: 'SendGrid',
-                auth: {
-                    user: 'nncl',
-                    pass: 'd4y4r444'
+                service: 'SendGrid'
+                , auth: {
+                    user: 'nncl'
+                    , pass: 'd4y4r444'
                 }
             });
 
             let mailOptions = {
-                to: user.email,
-                from: 'nncl@live.com',
-                subject: 'Node.js Password Reset',
-                text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+                to: user.email
+                , from: 'nncl@live.com'
+                , subject: 'Node.js Password Reset'
+                , text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                 'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                 'http://' + req.headers.host + '/reset/' + token + '\n\n' +
                 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
             };
 
             smtpTransport.sendMail(mailOptions, (err) => {
-
-                console.log('error man');
-                console.log(err);
 
                 let error = null;
 
