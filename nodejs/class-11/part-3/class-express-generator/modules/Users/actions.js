@@ -227,6 +227,7 @@ Actions.recover = (req, res) => {
 
         }
     ], (err) => {
+        console.log('error here dude');
         if (err) callback(err, null, res);
     });
 };
